@@ -7,7 +7,7 @@ import eu.stamp_project.testrunner.runner.coverage.JacocoRunner;
 import eu.stamp_project.testrunner.runner.test.TestRunner;
 import org.apache.commons.io.FileUtils;
 import org.jacoco.core.runtime.IRuntime;
-import org.objectweb.asm.Type;
+import org.objectweb.asm.xml.Processor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +18,6 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -404,7 +403,7 @@ public class EntryPoint {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EntryPoint.class);
 
-    static final String WHITE_SPACE = " ";
+    public static final String WHITE_SPACE = " ";
 
     static final String JAVA_COMMAND = "java";
 
@@ -454,7 +453,7 @@ public class EntryPoint {
 
     private static final List<Class<?>> JACOCO_DEPENDENCIES = Arrays.asList(
             IRuntime.class,
-            Type.class,
+            Processor.class,
             FileUtils.class
     );
 
